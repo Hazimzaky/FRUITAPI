@@ -130,7 +130,7 @@ app.set('trust proxy', 1);
 const productRoutes = require('../dist/routes/productRoutes').default;
 
 // API routes
-app.use('/api', productRoutes);
+app.use('/api/products', productRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
