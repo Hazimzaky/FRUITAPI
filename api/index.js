@@ -1,138 +1,112 @@
 const express = require('express');
-const helmet = require('helmet');
-const morgan = require('morgan');
-const compression = require('compression');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 
-// Global variable to track connection status
-let isConnected = false;
-let connectionPromise = null;
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-// Database connection function
-const connectToDatabase = async () => {
-  if (isConnected) {
-    return;
-  }
-
-  if (connectionPromise) {
-    return connectionPromise;
-  }
-
-  connectionPromise = new Promise(async (resolve, reject) => {
-    try {
-      const mongoUri = process.env.MONGODB_URI;
-      
-      if (!mongoUri) {
-        throw new Error('MONGODB_URI environment variable is not set');
-      }
-      
-      await mongoose.connect(mongoUri, {
-        maxPoolSize: 1,
-        serverSelectionTimeoutMS: 10000,
-        socketTimeoutMS: 30000,
-        connectTimeoutMS: 10000,
-        bufferCommands: false,
-        retryWrites: true,
-        retryReads: true,
-      });
-
-      isConnected = true;
-      console.log('✅ Connected to MongoDB');
-      resolve();
-    } catch (error) {
-      console.error('❌ MongoDB connection error:', error);
-      isConnected = false;
-      connectionPromise = null;
-      reject(error);
-    }
-  });
-
-  return connectionPromise;
-};
-
-// Middleware to ensure database connection
-app.use(async (req, res, next) => {
-  try {
-    await connectToDatabase();
-    next();
-  } catch (error) {
-    console.error('Database connection failed:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Database connection failed',
-      error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
-    });
-  }
-});
-
-// Initialize middlewares
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      styleSrc: ["'self'", "'unsafe-inline'"],
-      scriptSrc: ["'self'"],
-      imgSrc: ["'self'", "data:", "https:"],
-    },
-  },
-  crossOriginEmbedderPolicy: false
-}));
-
-// CORS middleware
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  
-  if (req.method === 'OPTIONS') {
-    res.sendStatus(200);
-  } else {
-    next();
-  }
-});
-
-app.use(compression());
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ extended: true, limit: '10mb' }));
-
-// Response handler middleware
+// Response helper
 app.use((req, res, next) => {
   res.success = (data, message = 'Success') => {
-    res.json({
-      success: true,
-      data,
-      message
-    });
+    res.json({ success: true, data, message });
   };
-  
-  res.error = (message = 'Error', statusCode = 400, error = null) => {
+  res.error = (message = 'Error', statusCode = 400) => {
     res.status(statusCode).json({
       success: false,
       message,
-      error: error ? {
-        type: error.name || 'ERROR',
-        code: error.code || statusCode,
+      error: {
+        type: 'ERROR',
+        code: statusCode,
         timestamp: new Date().toISOString(),
         path: req.path,
         method: req.method
-      } : null
+      }
     });
   };
-  
   next();
 });
 
-app.set('trust proxy', 1);
+// Database connection
+let isConnected = false;
 
-// Import routes after database connection is established
-const productRoutes = require('../dist/routes/productRoutes').default;
+const connectDB = async () => {
+  if (isConnected) return;
+  
+  try {
+    const mongoUri = process.env.MONGODB_URI;
+    if (!mongoUri) {
+      throw new Error('MONGODB_URI environment variable is not set');
+    }
 
-// API routes
-app.use('/api/products', productRoutes);
+    await mongoose.connect(mongoUri, {
+      maxPoolSize: 1,
+      serverSelectionTimeoutMS: 10000,
+      socketTimeoutMS: 30000,
+      connectTimeoutMS: 10000,
+      bufferCommands: false,
+    });
 
-// Health check endpoint
+    isConnected = true;
+    console.log('✅ Connected to MongoDB');
+  } catch (error) {
+    console.error('❌ MongoDB connection error:', error);
+    throw error;
+  }
+};
+
+// Product Schema
+const productSchema = new mongoose.Schema({
+  name: {
+    en: { type: String, required: true },
+    ar: { type: String, required: true }
+  },
+  category: {
+    type: String,
+    enum: ['Fruits', 'Vegetables', 'Herbs', 'Nuts', 'Grains'],
+    required: true
+  },
+  price: {
+    value: { type: Number, required: true },
+    currency: { type: String, default: 'USD' },
+    unit: { type: String, default: 'kg' }
+  },
+  images: [String],
+  description: { type: String, required: true },
+  attributes: {
+    organic: { type: Boolean, default: false },
+    shelf_life: { type: String, required: true },
+    calories: {
+      value: { type: Number, required: true },
+      unit: { type: String, default: 'kcal' },
+      per: { type: String, default: '100g' }
+    }
+  },
+  reviews: {
+    average_rating: { type: Number, default: 0 },
+    count: { type: Number, default: 0 }
+  }
+}, {
+  timestamps: true
+});
+
+const Product = mongoose.model('Product', productSchema);
+
+// Routes
+app.get('/', (req, res) => {
+  res.success({
+    name: 'Fruit & Vegetable E-commerce API',
+    version: '1.0.0',
+    description: 'RESTful API for managing fruits and vegetables',
+    endpoints: {
+      products: '/api/products',
+      health: '/api/health'
+    }
+  }, 'Welcome to Fruit & Vegetable E-commerce API');
+});
+
 app.get('/api/health', (req, res) => {
   res.success({
     status: 'OK',
@@ -142,44 +116,54 @@ app.get('/api/health', (req, res) => {
   }, 'API is running');
 });
 
-// Version endpoint
-app.get('/api/version', (req, res) => {
-  res.success({
-    name: 'Fruit & Vegetable E-commerce API',
-    version: '1.0.0',
-    description: 'RESTful API for managing fruits and vegetables',
-    endpoints: {
-      products: '/api/products',
-      health: '/api/health',
-      version: '/api/version'
-    }
-  }, 'API Version Information');
+app.get('/api/products', async (req, res) => {
+  try {
+    await connectDB();
+    
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+    
+    const products = await Product.find()
+      .skip(skip)
+      .limit(limit)
+      .sort({ createdAt: -1 });
+    
+    const total = await Product.countDocuments();
+    
+    res.success({
+      data: products,
+      pagination: {
+        currentPage: page,
+        totalPages: Math.ceil(total / limit),
+        totalItems: total,
+        itemsPerPage: limit,
+        hasNextPage: page < Math.ceil(total / limit),
+        hasPrevPage: page > 1
+      }
+    }, 'Products retrieved successfully');
+    
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    res.error('Failed to fetch products', 500);
+  }
 });
 
-// Root endpoint
-app.get('/', (req, res) => {
-  res.success({
-    name: 'Fruit & Vegetable E-commerce API',
-    version: '1.0.0',
-    description: 'RESTful API for managing fruits and vegetables',
-    documentation: `${req.protocol}://${req.get('host')}/api/version`,
-    health: `${req.protocol}://${req.get('host')}/api/health`
-  }, 'Welcome to Fruit & Vegetable E-commerce API');
-});
-
-// 404 handler
-app.use('*', (req, res) => {
-  res.status(404).json({
-    success: false,
-    message: 'Route not found',
-    error: {
-      type: 'NOT_FOUND',
-      code: 404,
-      timestamp: new Date().toISOString(),
-      path: req.originalUrl,
-      method: req.method
+app.get('/api/products/:id', async (req, res) => {
+  try {
+    await connectDB();
+    
+    const product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.error('Product not found', 404);
     }
-  });
+    
+    res.success({ data: product }, 'Product retrieved successfully');
+    
+  } catch (error) {
+    console.error('Error fetching product:', error);
+    res.error('Failed to fetch product', 500);
+  }
 });
 
 // Error handler
@@ -193,6 +177,21 @@ app.use((error, req, res, next) => {
       code: 500,
       timestamp: new Date().toISOString(),
       path: req.path,
+      method: req.method
+    }
+  });
+});
+
+// 404 handler
+app.use('*', (req, res) => {
+  res.status(404).json({
+    success: false,
+    message: 'Route not found',
+    error: {
+      type: 'NOT_FOUND',
+      code: 404,
+      timestamp: new Date().toISOString(),
+      path: req.originalUrl,
       method: req.method
     }
   });
