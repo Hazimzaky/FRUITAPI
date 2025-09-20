@@ -107,8 +107,8 @@ export const querySchema = Joi.object({
 
 // مخططات البارامتارز بتاع ال id
 export const idSchema = Joi.object({
-  id: Joi.string().uuid().required().messages({
-    'string.guid': 'Invalid product ID format',
+  id: Joi.string().pattern(/^[0-9a-fA-F]{24}$/).required().messages({
+    'string.pattern.base': 'Invalid product ID format - must be a valid MongoDB ObjectId',
     'any.required': 'Product ID is required'
   })
 });
@@ -161,7 +161,7 @@ export const productUpdateSchema = productSchema.fork(
  */
 export const bulkOperationSchema = Joi.object({
   operation: Joi.string().valid('delete', 'update').required(),
-  ids: Joi.array().items(Joi.string().uuid()).min(1).max(50).required(),
+  ids: Joi.array().items(Joi.string().pattern(/^[0-9a-fA-F]{24}$/)).min(1).max(50).required(),
   updateData: Joi.object().when('operation', {
     is: 'update',
     then: productUpdateSchema.required(),
