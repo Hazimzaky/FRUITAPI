@@ -53,7 +53,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Orange', ar: 'برتقال' },
     category: 'Fruits',
     price: { value: 3.49, currency: 'USD', unit: 'kg' },
-    images: ['https://images.pexels.com/photos/161559/background-bitter-breakfast-bright-161559.jpeg?_gl=1*13502d*_ga*MTgzMDQ3NjE0MC4xNzU4NDk0MTg1*_ga_8JE65Q40S6*czE3NTg0OTQxODQkbzEkZzEkdDE3NTg0OTQyMDIkajQyJGwwJGgw'],
+    images: ['https://images.unsplash.com/photo-1557800634-7bf3c73cec63?w=500&fm=jpg'],
     description: 'Juicy, vitamin C-rich oranges perfect for fresh juice or eating fresh.',
     attributes: {
       organic: true,
