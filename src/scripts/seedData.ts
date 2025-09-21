@@ -53,7 +53,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Orange', ar: 'برتقال' },
     category: 'Fruits',
     price: { value: 3.49, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1557800634-7bf3a73b4cbc?w=500&fm=jpg'],
+    images: ['https://images.pexels.com/photos/161559/background-bitter-breakfast-bright-161559.jpeg?_gl=1*13502d*_ga*MTgzMDQ3NjE0MC4xNzU4NDk0MTg1*_ga_8JE65Q40S6*czE3NTg0OTQxODQkbzEkZzEkdDE3NTg0OTQyMDIkajQyJGwwJGgw'],
     description: 'Juicy, vitamin C-rich oranges perfect for fresh juice or eating fresh.',
     attributes: {
       organic: true,
@@ -104,7 +104,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Grapes', ar: 'عنب' },
     category: 'Fruits',
     price: { value: 4.49, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1537640538966-79f369143b8f?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1631299106224-aae61c217164?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Sweet, seedless grapes perfect for snacking or making wine.',
     attributes: {
       organic: false,
@@ -121,7 +121,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Mango', ar: 'مانجو' },
     category: 'Fruits',
     price: { value: 6.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1605027990121-47550919c57a?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Tropical mango with sweet, juicy flesh. Perfect for smoothies, desserts, or eating fresh.',
     attributes: {
       organic: true,
@@ -155,7 +155,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Kiwi', ar: 'كيوي' },
     category: 'Fruits',
     price: { value: 7.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=500&fm=jpg'],
+    images: ['https://plus.unsplash.com/premium_photo-1674382739482-5d36b98d653a?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Tart, green kiwi fruit rich in vitamin C and fiber. Perfect for fruit salads.',
     attributes: {
       organic: true,
@@ -242,7 +242,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Lettuce', ar: 'خس' },
     category: 'Vegetables',
     price: { value: 2.99, currency: 'USD', unit: 'bunch' },
-    images: ['https://images.unsplash.com/photo-1622206151226-18ca2c9a4f78?w=500&fm=jpg'],
+    images: ['https://plus.unsplash.com/premium_photo-1678198891468-17f08ad39c29?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Fresh, green lettuce perfect for salads and sandwiches. Rich in folate and vitamin K.',
     attributes: {
       organic: true,
@@ -259,7 +259,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Broccoli', ar: 'بروكلي' },
     category: 'Vegetables',
     price: { value: 4.49, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1438118907707-5f4a9c4e3c30?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1583663848850-46af132dc08e?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Nutritious broccoli rich in vitamin C, K, and fiber. Perfect for steaming or stir-frying.',
     attributes: {
       organic: true,
@@ -276,7 +276,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Spinach', ar: 'سبانخ' },
     category: 'Vegetables',
     price: { value: 3.99, currency: 'USD', unit: 'bunch' },
-    images: ['https://images.unsplash.com/photo-1576047478767-88d6c24c0464?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1576045057995-568f588f82fb?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Dark, leafy spinach rich in iron, folate, and vitamin K. Perfect for salads and cooking.',
     attributes: {
       organic: true,
@@ -344,7 +344,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Cauliflower', ar: 'قرنبيط' },
     category: 'Vegetables',
     price: { value: 3.99, currency: 'USD', unit: 'piece' },
-    images: ['https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1613743990305-736d763f3d70?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Nutritious cauliflower perfect for roasting, steaming, or making rice. Rich in vitamin C.',
     attributes: {
       organic: true,
@@ -363,7 +363,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Basil', ar: 'ريحان' },
     category: 'Herbs',
     price: { value: 2.99, currency: 'USD', unit: 'bunch' },
-    images: ['https://images.unsplash.com/photo-1615485925618-7b1a0b2b5b1a?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1500420254515-0faefa2dac99?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Fresh basil leaves perfect for pesto, salads, and Italian dishes. Aromatic and flavorful.',
     attributes: {
       organic: true,
@@ -380,7 +380,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Cilantro', ar: 'كزبرة' },
     category: 'Herbs',
     price: { value: 1.99, currency: 'USD', unit: 'bunch' },
-    images: ['https://images.unsplash.com/photo-1615485925618-7b1a0b2b5b1a?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1723810315251-eeca9b7ee1a8?q=80&w=436&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Fresh cilantro perfect for Mexican, Asian, and Middle Eastern dishes. Bright and citrusy.',
     attributes: {
       organic: true,
@@ -397,7 +397,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Parsley', ar: 'بقدونس' },
     category: 'Herbs',
     price: { value: 1.99, currency: 'USD', unit: 'bunch' },
-    images: ['https://images.unsplash.com/photo-1615485925618-7b1a0b2b5b1a?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1721117090894-029c81cf0758?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Fresh parsley perfect for garnishing and adding flavor to dishes. Rich in vitamin K.',
     attributes: {
       organic: true,
@@ -414,7 +414,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Mint', ar: 'نعناع' },
     category: 'Herbs',
     price: { value: 2.49, currency: 'USD', unit: 'bunch' },
-    images: ['https://images.unsplash.com/photo-1615485925618-7b1a0b2b5b1a?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1603653856395-084002e5d39d?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Fresh mint leaves perfect for teas, cocktails, and Middle Eastern dishes. Refreshing and aromatic.',
     attributes: {
       organic: true,
@@ -431,7 +431,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Rosemary', ar: 'إكليل الجبل' },
     category: 'Herbs',
     price: { value: 3.99, currency: 'USD', unit: 'bunch' },
-    images: ['https://images.unsplash.com/photo-1615485925618-7b1a0b2b5b1a?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1614110142810-9953acd736dd?q=80&w=873&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Aromatic rosemary perfect for roasting meats and vegetables. Woody and fragrant.',
     attributes: {
       organic: true,
@@ -450,7 +450,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Almonds', ar: 'لوز' },
     category: 'Nuts',
     price: { value: 12.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=500&fm=jpg'],
+    images: ['https://plus.unsplash.com/premium_photo-1675237625910-e5d354c03987?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Premium almonds rich in protein, healthy fats, and vitamin E. Perfect for snacking or baking.',
     attributes: {
       organic: true,
@@ -467,7 +467,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Walnuts', ar: 'جوز' },
     category: 'Nuts',
     price: { value: 15.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1733337336594-61f20d18ac2a?q=80&w=817&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Rich walnuts high in omega-3 fatty acids and antioxidants. Perfect for salads and baking.',
     attributes: {
       organic: true,
@@ -484,7 +484,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Cashews', ar: 'كاجو' },
     category: 'Nuts',
     price: { value: 18.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1726771517475-e7acdd34cd8a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Creamy cashews rich in magnesium and healthy fats. Perfect for snacking or making nut butter.',
     attributes: {
       organic: false,
@@ -501,7 +501,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Pistachios', ar: 'فستق' },
     category: 'Nuts',
     price: { value: 22.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1502825751399-28baa9b81efe?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Premium pistachios rich in protein and healthy fats. Perfect for snacking or desserts.',
     attributes: {
       organic: true,
@@ -518,7 +518,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Pecans', ar: 'جوز البقان' },
     category: 'Nuts',
     price: { value: 19.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=500&fm=jpg'],
+    images: ['https://plus.unsplash.com/premium_photo-1675237626453-06a961faedaf?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Rich pecans perfect for baking and snacking. High in healthy fats and antioxidants.',
     attributes: {
       organic: true,
@@ -554,7 +554,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Quinoa', ar: 'كينوا' },
     category: 'Grains',
     price: { value: 8.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1586201375799-47cd24c3f595?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Superfood quinoa rich in complete protein and fiber. Perfect for salads and bowls.',
     attributes: {
       organic: true,
@@ -571,7 +571,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Oats', ar: 'شوفان' },
     category: 'Grains',
     price: { value: 3.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&fm=jpg'],
+    images: ['https://plus.unsplash.com/premium_photo-1671130295244-b058fc8d86fe?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Rolled oats perfect for breakfast porridge and baking. Rich in fiber and protein.',
     attributes: {
       organic: true,
@@ -588,7 +588,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Barley', ar: 'شعير' },
     category: 'Grains',
     price: { value: 5.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&fm=jpg'],
+    images: ['https://plus.unsplash.com/premium_photo-1705404738459-c4cb25ad7933?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Nutritious barley perfect for soups and stews. Rich in fiber and minerals.',
     attributes: {
       organic: false,
@@ -605,7 +605,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Buckwheat', ar: 'حنطة سوداء' },
     category: 'Grains',
     price: { value: 7.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1613758235306-69cc0a3f614d?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Gluten-free buckwheat rich in protein and antioxidants. Perfect for pancakes and porridge.',
     attributes: {
       organic: true,
@@ -624,7 +624,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Peach', ar: 'خوخ' },
     category: 'Fruits',
     price: { value: 4.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&fm=jpg'],
+    images: ['https://plus.unsplash.com/premium_photo-1664551734324-b358c6d7bb63?q=80&w=388&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Sweet, juicy peaches perfect for desserts and eating fresh. Rich in vitamin C.',
     attributes: {
       organic: true,
@@ -641,7 +641,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Pear', ar: 'إجاص' },
     category: 'Fruits',
     price: { value: 3.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1696426506268-00a41b06b956?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Sweet, crisp pears perfect for snacking or baking. Rich in fiber and vitamin C.',
     attributes: {
       organic: false,
@@ -658,7 +658,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Cherry', ar: 'كرز' },
     category: 'Fruits',
     price: { value: 9.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&fm=jpg'],
+    images: ['https://plus.unsplash.com/premium_photo-1688671923138-ff74e0f9a810?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Sweet, red cherries perfect for desserts and snacking. Rich in antioxidants.',
     attributes: {
       organic: true,
@@ -675,7 +675,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Lemon', ar: 'ليمون' },
     category: 'Fruits',
     price: { value: 2.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1590502593747-42a996133562?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Fresh lemons perfect for cooking, baking, and beverages. Rich in vitamin C.',
     attributes: {
       organic: true,
@@ -692,7 +692,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Lime', ar: 'ليمون حامض' },
     category: 'Fruits',
     price: { value: 3.49, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1578855691621-8a08ea00d1fb?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Fresh limes perfect for cocktails, cooking, and beverages. Rich in vitamin C.',
     attributes: {
       organic: false,
@@ -711,7 +711,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Zucchini', ar: 'كوسة' },
     category: 'Vegetables',
     price: { value: 3.99, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1692956475726-d4a90d0dfbdf?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Fresh zucchini perfect for grilling, sautéing, or spiralizing. Low in calories.',
     attributes: {
       organic: true,
@@ -728,7 +728,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Eggplant', ar: 'باذنجان' },
     category: 'Vegetables',
     price: { value: 4.49, currency: 'USD', unit: 'kg' },
-    images: ['https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1639428134238-b548770d4b77?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Purple eggplant perfect for grilling, roasting, or making baba ganoush. Rich in antioxidants.',
     attributes: {
       organic: false,
@@ -745,7 +745,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Cabbage', ar: 'ملفوف' },
     category: 'Vegetables',
     price: { value: 2.99, currency: 'USD', unit: 'piece' },
-    images: ['https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?q=80&w=385&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Fresh cabbage perfect for coleslaw, stir-fries, and fermenting. Rich in vitamin C.',
     attributes: {
       organic: true,
@@ -762,7 +762,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Radish', ar: 'فجل' },
     category: 'Vegetables',
     price: { value: 2.49, currency: 'USD', unit: 'bunch' },
-    images: ['https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500&fm=jpg'],
+    images: ['https://images.unsplash.com/photo-1589753014594-0676c69bbcbe?q=80&w=740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Crisp radishes perfect for salads and pickling. Spicy and refreshing.',
     attributes: {
       organic: true,
@@ -779,7 +779,7 @@ const sampleProducts: Partial<IProduct>[] = [
     name: { en: 'Asparagus', ar: 'هليون' },
     category: 'Vegetables',
     price: { value: 6.99, currency: 'USD', unit: 'bunch' },
-    images: ['https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500&fm=jpg'],
+    images: ['https://plus.unsplash.com/premium_photo-1722988820957-cc22d1214e50?q=80&w=804&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'],
     description: 'Fresh asparagus perfect for grilling, roasting, or steaming. Rich in folate and vitamin K.',
     attributes: {
       organic: true,
