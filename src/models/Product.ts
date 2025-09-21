@@ -61,7 +61,7 @@ const ProductSchema = new Schema<IProduct & Document>({
     type: String,
     validate: {
       validator: function(v: string) {
-        return /^https?:\/\/.+\.(jpg|jpeg|png|webp)$/i.test(v) || /^https?:\/\/images\.unsplash\.com\/.+/i.test(v);
+        return /^https?:\/\/.+\.(jpg|jpeg|png|webp)$/i.test(v) || /^https?:\/\/.*unsplash\.com\/.+/i.test(v);
       },
       message: 'Image URL must be a valid HTTP/HTTPS URL ending with jpg, jpeg, png, webp, or be an Unsplash URL'
     }
